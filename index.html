@@ -12,7 +12,7 @@
 		<h5>Do It</h5>
 
 		<ul>
-			<li ng-repeat="task in main.tasks">{{task}}</li>
+			<li ng-attr-id="{{'task-' + $index}}" ng-repeat="task in main.tasks">{{task}}<button ng-click="main.handleDelete($event)">Delete</button></li>
 		</ul>
 
 		<form ng-submit="main.handleSubmit()">

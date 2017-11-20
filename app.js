@@ -11,4 +11,13 @@ app.controller('MainController', [function(){
 		this.tasks.push(x);
 		console.log(this.tasks);
 	}
+	this.handleDelete = function($event){
+		const array = $event.currentTarget.parentNode.innerHTML.split('<');
+		console.log(array[0]);
+		for (let i = 0; i < this.tasks.length; i++){
+			if (array[0] === this.tasks[i]){
+				this.tasks.splice(i, 1);
+			}
+		}
+	}
 }])
