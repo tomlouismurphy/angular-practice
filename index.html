@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ToDo">
 <head>
 	<title>What Is To Be Done?</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
@@ -7,6 +7,18 @@
 </head>
 <body>
 	<div ng-controller="MainController as main">
+		<h2>You Gotta Do Some Stuff, Man</h2>
+		<h4>Specifically, This Stuff</h4>
+		<h5>Do It</h5>
+
+		<ul>
+			<li ng-repeat="task in main.tasks">{{task}}</li>
+		</ul>
+
+		<form ng-submit="main.handleSubmit()">
+			New Task: <input type="text" ng-model="main.newTask"><br>
+			<input type="submit" value="Add">
+		</form>
 	</div>
 </body>
 </html>
